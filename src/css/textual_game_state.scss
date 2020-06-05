@@ -1,0 +1,64 @@
+.gameState.textualState {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    $padding: 15px;
+
+    .headerBar,
+    > .container .content {
+        @include S(width, 500px);
+    }
+
+    .headerBar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        h1 {
+            display: flex;
+            pointer-events: all;
+            align-items: center;
+            cursor: pointer;
+            @include SuperHeading;
+            text-transform: uppercase;
+            color: #333438;
+            position: relative;
+            @include IncreasedClickArea(10px);
+        }
+
+        .backButton {
+            @include S(width, 30px);
+            @include S(height, 30px);
+            @include S(margin-right, 10px);
+            @include S(margin-left, -5px);
+            background: uiResource("icons/state_back_button.png") center center / 70% no-repeat;
+        }
+
+        @include S(margin-bottom, 20px);
+    }
+
+    > .container {
+        > .content {
+            background: #fff;
+            @include S(border-radius, $globalBorderRadius);
+            @include S(padding, 10px);
+            height: calc(80vh - #{D(60px)});
+            overflow-y: auto;
+            box-sizing: border-box;
+            pointer-events: all;
+
+            a {
+                color: $colorBlueBright;
+            }
+
+            .categoryLabel {
+                display: block;
+                text-transform: uppercase;
+                @include S(margin-top, 15px);
+                @include S(margin-bottom, 15px);
+                @include Heading;
+            }
+        }
+    }
+}
