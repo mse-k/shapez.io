@@ -1,9 +1,0 @@
-#state_AboutState {
-    > .container .content {
-        @include PlainText;
-    }
-
-    a {
-        @include S(margin, 0, 3px);
-    }
-}
